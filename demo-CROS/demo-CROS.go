@@ -152,8 +152,7 @@ func enableCorsMiddleware(handler http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
-		w.Header().Set("Access-Control-Allow-Headers",
-			"Origin, Accept, Content-Type, Content-Length, Authorization, X-Cross, X-Requested-With, ngrok-skip-browser-warning")
+		w.Header().Set("Access-Control-Allow-Headers","Origin, Accept, Content-Type, Content-Length, Authorization, X-Cross, X-Requested-With, ngrok-skip-browser-warning")
 
 		if r.Method == "OPTIONS" {
 			w.WriteHeader(http.StatusOK)
